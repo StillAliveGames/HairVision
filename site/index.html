@@ -2,13 +2,15 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Команда - Умный город</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Умный город - Главная</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Вставьте этот код в каждый файл (about.html, team.html и др.) -->
-    <nav class="navbar">
+    <nav class="navbar fade-in">
         <ul class="nav-list">
             <li><a href="index.html" class="nav-link">Главная</a></li>
             <li><a href="about.html" class="nav-link">О проекте</a></li>
@@ -18,26 +20,31 @@
         </ul>
     </nav>
 
-    <div class="container">
-        <h2>Наша команда</h2>
-        <div class="card-grid">
-            <div class="card">
-                <img src="images/photo_2025-05-14 15.55.10.jpeg" alt="Горячев Андрей">
-                <h3>Горячев Андрей</h3>
-                <p>Ведущий программист - разработка прототипа</p>
-            </div>
-        <div class="card-grid">
-            <div class="card">
-                <img src="images/photo_2025-05-14 15.55.16.jpeg" alt="Ракитина Мария">
-                <h3>Ракитина Мария</h3>
-                <p>Главный дизайнер/идеолог - разработка дизайна, идея проекта, анализ рынка.</p>
-            </div>
-            <!-- Добавьте других участников -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">Будущее индустрии красоты</h1>
+            <p class="fade-in">Продвинутое решение на основе искусственного интелекта</p>
         </div>
-    </div>
+    </section>
 
-    <footer class="footer">
-        <p>© 2025 Нейро-Фоторамки. Все права защищены</p>
-    </footer>
+    <main class="container">
+        <div class="container">
+
+            <div class="journal-post">
+                <img src="images/Снимок экрана 2025-05-14 в 15.21.02.png" alt="Прогресс разработки">
+                <div class="post-content">
+                    <p>Сколько времени тратит мастер объясняя человеку какая прическа ему подойдёт?
+                    Наше решение позволит оптимизировать время которое мастер проводит с одним клиентом</p>
+                    <ul>
+                        <li>Увеличение пропускной способности предприятия</li>
+                        <li>Уменьшение рисков </li>
+                        <li>Комфорт для клиентов </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

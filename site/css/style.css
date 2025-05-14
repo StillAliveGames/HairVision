@@ -1,0 +1,241 @@
+/* Основные переменные */
+:root {
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --accent: #00ff88;
+    --gray: #1a1a1a;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Типографика */
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.8rem; }
+
+/* Навигация */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Герой-секция */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('../images/hero-dark.jpg') center/cover;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 4px 20px rgba(0,255,136,0.3);
+}
+
+/* Карточки */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 4rem 0;
+}
+
+.card {
+    background: var(--gray);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: var(--transition);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0,255,136,0.1);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .nav-list { gap: 1.5rem; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .hero {
+        height: 80vh;
+        padding-top: 100px;
+    }
+}
+.journal-post {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.post-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.post-date {
+    color: #00FF88;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-title {
+    font-size: 1.8rem;
+}
+
+.post-media {
+    margin: 2rem 0;
+}
+
+.post-image {
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.1);
+}
+
+.post-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+.post-list {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    list-style: none;
+}
+
+.post-list li {
+    position: relative;
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.post-list li::before {
+    content: "▹";
+    color: #00FF88;
+    position: absolute;
+    left: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .post-image {
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+    .post-title {
+        font-size: 1.4rem;
+    }
+
+    .post-content {
+        padding: 0 1rem;
+    }
+}
+/* Добавьте эти стили */
+.container {
+    margin-top: 80px; /* Высота шапки + дополнительные отступы */
+    padding: 0 20px;
+}
+
+.navbar {
+    height: 60px; /* Явно задаём высоту шапки */
+    /* ... остальные стили ... */
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 100px; /* Если шапка становится выше на мобилках */
+    }
+
+    .navbar {
+        height: 80px;
+        padding: 10px;
+    }
+}
